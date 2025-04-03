@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Encuentra tu próximo trabajo ideal</h1>
+                <p class="lead mb-4">RecruitMatch utiliza inteligencia artificial para conectar tu perfil con las mejores oportunidades laborales que se ajustan a tus habilidades y aspiraciones.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="{% url 'register' %}" class="btn btn-primary btn-lg px-4 me-md-2">Registrarse</a>
+                    <a href="{% url 'login' %}" class="btn btn-outline-light btn-lg px-4">Iniciar Sesión</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://via.placeholder.com/600x400" alt="RecruitMatch Platform" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">¿Por qué elegir RecruitMatch?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-robot fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title h4">IA Inteligente</h3>
+                        <p class="card-text">Nuestro sistema de IA analiza tu perfil y encuentra las mejores coincidencias laborales.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-bolt fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title h4">Coincidencias Rápidas</h3>
+                        <p class="card-text">Obtén resultados en minutos, no en días. Encuentra tu trabajo ideal más rápido.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
+                        <h3 class="card-title h4">Oportunidades de Crecimiento</h3>
+                        <p class="card-text">Accede a trabajos que se alinean con tu carrera y objetivos profesionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2 class="mb-4">Comienza tu viaje profesional hoy</h2>
+                <p class="lead mb-4">Únete a miles de profesionales que ya han encontrado su trabajo ideal a través de RecruitMatch.</p>
+                <a href="{% url 'register' %}" class="btn btn-primary btn-lg">Crear Cuenta Gratuita</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="card text-center p-3">
+                            <h3 class="display-4 text-primary">1000+</h3>
+                            <p class="mb-0">Usuarios Activos</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card text-center p-3">
+                            <h3 class="display-4 text-primary">500+</h3>
+                            <p class="mb-0">Empresas Asociadas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

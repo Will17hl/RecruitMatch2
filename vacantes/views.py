@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import Vacante
+from django.db.models import Q
 
 def home(request):
     vacantes = Vacante.objects.all()
@@ -11,9 +12,15 @@ def home(request):
     location_filter = request.GET.get('location', '')
     area_filter = request.GET.get('area', '')
 
-    # Apply filters
+    # Apply search
     if search_query:
-        vacantes = vacantes.filter(title__icontains=search_query)
+        vacantes = vacantes.filter(
+            Q(company__icontains=search_query) |
+            Q(location__icontains=search_query) |
+            Q(area__icontains=search_query)
+        )
+
+    # Apply filters
     if company_filter:
         vacantes = vacantes.filter(company__icontains=company_filter)
     if location_filter:
@@ -22,7 +29,7 @@ def home(request):
         vacantes = vacantes.filter(area__icontains=area_filter)
 
     # Paginate results
-    paginator = Paginator(vacantes, 12)  # Show 10 jobs per page
+    paginator = Paginator(vacantes, 12)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container py-5">
+    <h1 class="text-center mb-4">Formulario de Aplicación</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="cc" class="form-label">Cédula</label>
+            <input type="text" class="form-control" id="cc" name="cc" required>
+        </div>
+        <div class="mb-3">
+            <label for="estudios" class="form-label">Estudios</label>
+            <input type="text" class="form-control" id="estudios" name="estudios" required>
+        </div>
+        <div class="mb-3">
+            <label for="tipo" class="form-label">Tipo</label>
+            <select class="form-select" id="tipo" name="tipo" required>
+                <option value="influencer">Influencer</option>
+                <option value="candidato">Candidato</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="correo" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="correo" name="correo" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{% endblock %}

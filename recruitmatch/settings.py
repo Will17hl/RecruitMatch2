@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vacantes',
+    'applyJob',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'recruitmatch.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'recruitmatch/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'recruitmatch/templates')],  # Cambiado a 'recruitmatch/templates/applyJob'
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -7,8 +7,15 @@ class Command(BaseCommand):
     help = 'Importa influencers desde un archivo CSV'
 
     def handle(self, *args, **kwargs):
-        archivo_csv = 'coloca_aqui_tu_csv.csv'  # Asegúrate de colocar la ruta correcta del archivo CSV
+        archivo_csv = 'influencers_data.csv'  # Asegúrate de colocar la ruta correcta del archivo CSV
         ruta_absoluta = os.path.join(os.getcwd(), archivo_csv)
+
+        # Verificar si la imagen predeterminada existe
+        imagen_predeterminada = os.path.join(os.getcwd(), 'media/images/default_influencer.png')
+        
+        if not os.path.exists(imagen_predeterminada):
+            self.stderr.write(self.style.ERROR("❌ La imagen predeterminada 'default_influencer.png' no se encuentra en la ruta 'media/images/'."))
+            return  # Detener la importación si la imagen no existe
 
         try:
             with open(ruta_absoluta, mode='r', encoding='utf-8') as file:
@@ -25,12 +32,12 @@ class Command(BaseCommand):
                             ciudad_influencer=row['ciudad_influencer'],
                             area_influencer=row['area_influencer'],
                             precio_campaña=float(row['precio_campaña']),
-                            imagen='images/default_image.jpg'  # Asignamos la imagen predeterminada
+                            imagen='images/default_influencer.png'  # Asignamos la imagen predeterminada
                         )
                     except KeyError as e:
-                        self.stderr.write(self.style.ERROR(f"Falta columna: {e}"))
+                        self.stderr.write(self.style.ERROR(f"❌ Falta columna: {e}"))
                     except ValueError as e:
-                        self.stderr.write(self.style.ERROR(f"Formato inválido en fila: {row} → {e}"))
+                        self.stderr.write(self.style.ERROR(f"❌ Formato inválido en fila: {row} → {e}"))
             self.stdout.write(self.style.SUCCESS('✅ Importación completada correctamente.'))
         except FileNotFoundError:
             self.stderr.write(self.style.ERROR(f"❌ Archivo no encontrado: {ruta_absoluta}"))

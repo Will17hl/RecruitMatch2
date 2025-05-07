@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>RecruitMatchAI - Influencers</title>
+  <title>RecruitMatchAI - Vacantes</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   {% load static %}
   <link rel="stylesheet" href="{% static 'meal/css/styles.css' %}">
@@ -121,16 +121,16 @@
       background-color: #3e8e41;
     }
 
-    .product-list {
+    .vacante-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
       gap: 2rem;
       padding: 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .product-item {
+    .vacante-item {
       background-color: white;
       padding: 1.5rem;
       border-radius: 16px;
@@ -139,12 +139,12 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .product-item:hover {
+    .vacante-item:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
 
-    .product-item img {
+    .vacante-item img {
       max-height: 180px;
       width: 100%;
       object-fit: contain;
@@ -152,18 +152,18 @@
       margin-bottom: 1rem;
     }
 
-    .product-item h3 {
+    .vacante-item h3 {
       font-size: 1.3rem;
       margin-bottom: 0.5rem;
       color: var(--azul-profundo);
     }
 
-    .product-item p {
+    .vacante-item p {
       margin: 0.3rem 0;
       font-size: 0.95rem;
     }
 
-    .product-item .price {
+    .vacante-item .salary {
       font-size: 1.4rem;
       font-weight: bold;
       color: var(--azul-vitalidad);
@@ -208,7 +208,7 @@
       <nav>
         <ul>
           <li><a href="/">Inicio</a></li>
-          <li><a href="/vacante/">Vacante</a></li>
+          <li><a href="/influencer/">Influencer</a></li>
           <li><a href="/perfil/">Perfil</a></li>
           {% if user.is_authenticated %}
             <li><a href="{% url 'logoutaccount' %}" class="cta-button">Logout ({{ user.username }})</a></li>
@@ -222,27 +222,25 @@
   </header>
 
   <div class="search-form">
-    <form method="get" action="{% url 'influencers' %}">
-      <input type="text" name="nombre_influencer" placeholder="Nombre del influencer" value="{{ request.GET.nombre_influencer }}">
-      <input type="text" name="ciudad_influencer" placeholder="Ciudad del influencer" value="{{ request.GET.ciudad_influencer }}">
-      <input type="text" name="area_influencer" placeholder="Área del influencer" value="{{ request.GET.area_influencer }}">
-      <input type="text" name="redes_sociales" placeholder="Redes sociales" value="{{ request.GET.redes_sociales }}">
-      <input type="number" name="seguidores" placeholder="Mínimo seguidores" value="{{ request.GET.seguidores }}">
-      <input type="number" name="precio_campaña" placeholder="Precio máximo campaña" value="{{ request.GET.precio_campaña }}">
+    <form method="get" action="{% url 'vacantes' %}">
+      <input type="text" name="nombre_vacante" placeholder="Nombre de la vacante" value="{{ request.GET.nombre_vacante }}">
+      <input type="text" name="ciudad_vacante" placeholder="Ciudad de la vacante" value="{{ request.GET.ciudad_vacante }}">
+      <input type="text" name="area_vacante" placeholder="Área de la vacante" value="{{ request.GET.area_vacante }}">
+      <input type="number" name="salario_vacante" placeholder="Salario mínimo" value="{{ request.GET.salario_vacante }}">
+      <input type="text" name="empresa_vacante" placeholder="Empresa de la vacante" value="{{ request.GET.empresa_vacante }}">
       <button type="submit">Buscar</button>
     </form>
   </div>
 
-  <div class="product-list">
-    {% for influencer in page_obj %}
-      <div class="product-item">
-        <img src="{{ influencer.imagen.url }}" alt="{{ influencer.nombre_influencer }}">
-        <h3>{{ influencer.nombre_influencer }}</h3>
-        <p><strong>Ciudad:</strong> {{ influencer.ciudad_influencer }}</p>
-        <p><strong>Área:</strong> {{ influencer.area_influencer }}</p>
-        <p><strong>Seguidores:</strong> {{ influencer.seguidores }}</p>
-        <p><strong>Precio campaña:</strong> ${{ influencer.precio_campaña }}</p>
-        <p><strong>Redes sociales:</strong> {{ influencer.redes_sociales }}</p>
+  <div class="vacante-list">
+    {% for vacante in page_obj %}
+      <div class="vacante-item">
+        <img src="{{ vacante.imagen.url }}" alt="{{ vacante.nombre_vacante }}">
+        <h3>{{ vacante.nombre_vacante }}</h3>
+        <p><strong>Ciudad:</strong> {{ vacante.ciudad_vacante }}</p>
+        <p><strong>Área:</strong> {{ vacante.area_vacante }}</p>
+        <p><strong>Salario:</strong> ${{ vacante.salario_vacante }}</p>
+        <p><strong>Empresa:</strong> {{ vacante.empresa_vacante }}</p>
       </div>
     {% endfor %}
   </div>
@@ -251,22 +249,18 @@
     <span class="step-links">
       {% if page_obj.has_previous %}
         <a href="?page=1
-          {% if request.GET.nombre_influencer %}&nombre_influencer={{ request.GET.nombre_influencer }}{% endif %}
-          {% if request.GET.ciudad_influencer %}&ciudad_influencer={{ request.GET.ciudad_influencer }}{% endif %}
-          {% if request.GET.area_influencer %}&area_influencer={{ request.GET.area_influencer }}{% endif %}
-          {% if request.GET.redes_sociales %}&redes_sociales={{ request.GET.redes_sociales }}{% endif %}
-          {% if request.GET.seguidores %}&seguidores={{ request.GET.seguidores }}{% endif %}
-          {% if request.GET.precio_campaña %}&precio_campaña={{ request.GET.precio_campaña }}{% endif %}
-          {% if request.GET.seguidores %}&seguidores={{ request.GET.seguidores }}{% endif %}
-          {% if request.GET.precio_campaña %}&precio_campaña={{ request.GET.precio_campaña }}{% endif %}
+          {% if request.GET.nombre_vacante %}&nombre_vacante={{ request.GET.nombre_vacante }}{% endif %}
+          {% if request.GET.ciudad_vacante %}&ciudad_vacante={{ request.GET.ciudad_vacante }}{% endif %}
+          {% if request.GET.area_vacante %}&area_vacante={{ request.GET.area_vacante }}{% endif %}
+          {% if request.GET.salario_vacante %}&salario_vacante={{ request.GET.salario_vacante }}{% endif %}
+          {% if request.GET.empresa_vacante %}&empresa_vacante={{ request.GET.empresa_vacante }}{% endif %}
         ">Primera</a>
         <a href="?page={{ page_obj.previous_page_number }}
-          {% if request.GET.nombre_influencer %}&nombre_influencer={{ request.GET.nombre_influencer }}{% endif %}
-          {% if request.GET.ciudad_influencer %}&ciudad_influencer={{ request.GET.ciudad_influencer }}{% endif %}
-          {% if request.GET.area_influencer %}&area_influencer={{ request.GET.area_influencer }}{% endif %}
-          {% if request.GET.redes_sociales %}&redes_sociales={{ request.GET.redes_sociales }}{% endif %}
-          {% if request.GET.seguidores %}&seguidores={{ request.GET.seguidores }}{% endif %}
-          {% if request.GET.precio_campaña %}&precio_campaña={{ request.GET.precio_campaña }}{% endif %}
+          {% if request.GET.nombre_vacante %}&nombre_vacante={{ request.GET.nombre_vacante }}{% endif %}
+          {% if request.GET.ciudad_vacante %}&ciudad_vacante={{ request.GET.ciudad_vacante }}{% endif %}
+          {% if request.GET.area_vacante %}&area_vacante={{ request.GET.area_vacante }}{% endif %}
+          {% if request.GET.salario_vacante %}&salario_vacante={{ request.GET.salario_vacante }}{% endif %}
+          {% if request.GET.empresa_vacante %}&empresa_vacante={{ request.GET.empresa_vacante }}{% endif %}
         ">Anterior</a>
       {% endif %}
 
@@ -276,20 +270,18 @@
 
       {% if page_obj.has_next %}
         <a href="?page={{ page_obj.next_page_number }}
-          {% if request.GET.nombre_influencer %}&nombre_influencer={{ request.GET.nombre_influencer }}{% endif %}
-          {% if request.GET.ciudad_influencer %}&ciudad_influencer={{ request.GET.ciudad_influencer }}{% endif %}
-          {% if request.GET.area_influencer %}&area_influencer={{ request.GET.area_influencer }}{% endif %}
-          {% if request.GET.redes_sociales %}&redes_sociales={{ request.GET.redes_sociales }}{% endif %}
-          {% if request.GET.seguidores %}&seguidores={{ request.GET.seguidores }}{% endif %}
-          {% if request.GET.precio_campaña %}&precio_campaña={{ request.GET.precio_campaña }}{% endif %}
+          {% if request.GET.nombre_vacante %}&nombre_vacante={{ request.GET.nombre_vacante }}{% endif %}
+          {% if request.GET.ciudad_vacante %}&ciudad_vacante={{ request.GET.ciudad_vacante }}{% endif %}
+          {% if request.GET.area_vacante %}&area_vacante={{ request.GET.area_vacante }}{% endif %}
+          {% if request.GET.salario_vacante %}&salario_vacante={{ request.GET.salario_vacante }}{% endif %}
+          {% if request.GET.empresa_vacante %}&empresa_vacante={{ request.GET.empresa_vacante }}{% endif %}
         ">Siguiente</a>
         <a href="?page={{ page_obj.paginator.num_pages }}
-          {% if request.GET.nombre_influencer %}&nombre_influencer={{ request.GET.nombre_influencer }}{% endif %}
-          {% if request.GET.ciudad_influencer %}&ciudad_influencer={{ request.GET.ciudad_influencer }}{% endif %}
-          {% if request.GET.area_influencer %}&area_influencer={{ request.GET.area_influencer }}{% endif %}
-          {% if request.GET.redes_sociales %}&redes_sociales={{ request.GET.redes_sociales }}{% endif %}
-          {% if request.GET.seguidores %}&seguidores={{ request.GET.seguidores }}{% endif %}
-          {% if request.GET.precio_campaña %}&precio_campaña={{ request.GET.precio_campaña }}{% endif %}
+          {% if request.GET.nombre_vacante %}&nombre_vacante={{ request.GET.nombre_vacante }}{% endif %}
+          {% if request.GET.ciudad_vacante %}&ciudad_vacante={{ request.GET.ciudad_vacante }}{% endif %}
+          {% if request.GET.area_vacante %}&area_vacante={{ request.GET.area_vacante }}{% endif %}
+          {% if request.GET.salario_vacante %}&salario_vacante={{ request.GET.salario_vacante }}{% endif %}
+          {% if request.GET.empresa_vacante %}&empresa_vacante={{ request.GET.empresa_vacante }}{% endif %}
         ">Última</a>
       {% endif %}
     </span>

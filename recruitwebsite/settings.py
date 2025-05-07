@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts', 
     'influencer',
     'ai',
+    'vacante',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'recruitwebsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'recruitwebsite', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

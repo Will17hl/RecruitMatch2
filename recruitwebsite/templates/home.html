@@ -7,9 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --verde-vitalidad: #4CAF50;
-      --verde-tranquilo: #81C784;
-      --verde-profundo: #2E7D32;
+      --azul-vitalidad: #1A73E8; /* Azul más oscuro */
+      --azul-tranquilo: #88C5F2; /* Azul más claro */
+      --azul-profundo: #0069D9; /* Azul profundo más oscuro */
       --blanco-pureza: #FAFAFA;
       --gris-natural: #B0BEC5;
     }
@@ -17,13 +17,13 @@
     body {
       font-family: 'Nunito', sans-serif;
       background-color: var(--blanco-pureza);
-      color: var(--verde-profundo);
+      color: var(--azul-profundo);
       margin: 0;
       padding: 0;
     }
 
     header, footer {
-      background-color: var(--verde-vitalidad);
+      background-color: var(--azul-vitalidad);
       color: white;
       padding: 1.5rem 0;
     }
@@ -71,7 +71,7 @@
     }
 
     .cta-button {
-      background-color: var(--verde-profundo);
+      background-color: var(--azul-profundo);
       padding: 0.7rem 1.2rem;
       border-radius: 8px;
       font-size: 1.1rem;
@@ -79,7 +79,7 @@
     }
 
     .cta-button:hover {
-      background-color: #27692b;
+      background-color: #005bb5;
     }
 
     .hero {
@@ -112,17 +112,17 @@
       font-size: 3.2rem;
       font-weight: 700;
       margin-bottom: 1rem;
-      color: var(--verde-profundo);
+      color: var(--azul-profundo);
     }
 
     .hero p {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
-      color: var(--verde-profundo);
+      color: var(--azul-profundo);
     }
 
     button {
-      background-color: var(--verde-vitalidad);
+      background-color: var(--azul-vitalidad);
       color: white;
       padding: 0.6rem 1.2rem;
       border: none;
@@ -134,7 +134,7 @@
     }
 
     button:hover {
-      background-color: #3e8e41;
+      background-color: #005bb5;
     }
 
     footer p {
@@ -150,12 +150,13 @@
   <header>
     <div class="container-flex">
       <div class="logo">
-        <img src="/media/images/nutriflowlogo.png" alt="NutriFlow Logo" />
-        <span style="margin-left: 12px;">NutriFlow</span>
+        <img src="/media/images/recruitlogo.png" alt="RecruitMatchAI Logo" />
+        <span style="margin-left: 12px;">RecruitMatchAI</span>
       </div>
       <nav>
         <ul>
           <li><a href="/influencer">Influencer</a></li>
+          <li><a href="/vacante">Vacante</a></li>
           <li><a href="perfil/">Perfil</a></li>
           {% if user.is_authenticated %}
             <li><a href="{% url 'logoutaccount' %}" class="cta-button">Logout ({{ user.username }})</a></li>
@@ -171,17 +172,15 @@
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Personalized Nutrition Made Easy</h1>
-      <p>Get customized meal plans tailored to your goals, budget, and dietary needs.</p>
+      <h1>Conecta tu empresa con influencers de todo el mundo en un solo sitio</h1>
+      <p>Conseguimos los mejores influencers para llenar tus vacantes libres</p>
     </div>
   </section>
 
   <footer>
     <div class="container-flex">
-      <p>&copy; 2025 NutriFlow. All rights reserved.</p>
+      <p>&copy; 2025 RecruitMatchAI. All rights reserved.</p>
     </div>
   </footer>
 </body>
 </html>
-
-

@@ -40,12 +40,17 @@ def vista_influencer(request):
         except ValueError:
             pass
 
+    # Filtro por redes sociales (nuevo filtro)
+    filtro_redes = request.GET.get('redes_sociales', '')
+    if filtro_redes:
+        influencers = influencers.filter(redes_sociales__icontains=filtro_redes)
+
     # Paginación
-    paginador = Paginator(influencers, 18)  # Mostrar 18 influencers por página
+    paginador = Paginator(influencers, 12)  # Mostrar 12 influencers por página
     numero_pagina = request.GET.get('page')
     page_obj = paginador.get_page(numero_pagina)
 
-    return render(request, 'influencers.html', {'page_obj': page_obj})
+    return render(request, 'influencer.html', {'page_obj': page_obj})
 
 # Vista para manejar la búsqueda (reutilizada en la vista principal)
 def buscar_influencer(request):

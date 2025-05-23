@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>RecruitMatchAI - Influencers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'meal/css/styles.css' %}">
+  <style>
+    :root {
+      --azul-vitalidad: #1A73E8;
+      --azul-tranquilo: #88C5F2;
+      --azul-profundo: #0069D9;
+      --blanco-pureza: #FAFAFA;
+      --gris-natural: #B0BEC5;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: var(--blanco-pureza);
+      color: var(--azul-profundo);
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: var(--azul-vitalidad);
+      color: white;
+      padding: 1.5rem 0;
+    }
+
+    .container-flex {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .logo a {
+      color: white;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      height: 60px;
+      vertical-align: middle;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.85;
+    }
+
+    .cta-button {
+      background-color: var(--azul-profundo);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .cta-button:hover {
+      background-color: #005bb5;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 1.8rem;
+    }
+
+    .styled-form {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .styled-form label {
+      font-weight: 600;
+      color: var(--azul-profundo);
+      margin-bottom: 0.2rem;
+    }
+
+    .styled-form input {
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--gris-natural);
+      font-size: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    .styled-form button {
+      background-color: var(--azul-vitalidad);
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .styled-form button:hover {
+      background-color: #005bb5;
+    }
+
+    .result {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      margin-bottom: 1rem;
+    }
+
+    .card h4 {
+      margin: 0 0 0.5rem;
+      color: var(--azul-profundo);
+    }
+
+    .match-high {
+      color: #2ecc71;
+      font-weight: bold;
+    }
+
+    .match-medium {
+      color: #f39c12;
+      font-weight: bold;
+    }
+
+    .match-low {
+      color: #e74c3c;
+      font-weight: bold;
+    }
+
+    .mensaje-expandible {
+      position: relative;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-top: 1rem;
+      color: #333;
+    }
+
+    .mensaje-completo {
+      display: none;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-btn {
+      background: none;
+      color: var(--azul-profundo);
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      padding: 0;
+      font-size: 0.95rem;
+      text-decoration: underline;
+    }
+
+    footer p {
+      text-align: center;
+      margin: 0;
+      font-size: 1rem;
+      padding-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container-flex">
+      <div class="logo">
+        <a href="/"><img src="/media/images/recruitlogo.png" alt="Logo de RecruitMatchAI" /><span style="margin-left: 12px;">RecruitMatchAI</span></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/vacante/">Vacante</a></li>
+          <li><a href="/perfil/">Perfil</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'logoutaccount' %}" class="cta-button">Logout ({{ user.username }})</a></li>
+          {% else %}
+            <li><a href="{% url 'loginaccount' %}">Login</a></li>
+            <li><a href="{% url 'signupaccount' %}" class="cta-button">Sign Up</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h2>🔎 Match para Empresa</h2>
+  <form id="formEmpresa" method="post" class="styled-form">
+    {% csrf_token %}
+    <input type="hidden" name="tipo" value="empresa" />
+    <label for="titulo">Título de la vacante:</label>
+    <input type="text" id="titulo" name="titulo" required />
+
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudad" name="ciudad" required />
+
+    <label for="precio_max">Precio máximo campaña:</label>
+    <input type="number" id="precio_max" name="precio_max" required min="0" step="any" />
+
+    <button type="submit">🔍 Buscar Influencers</button>
+  </form>
+
+  <div id="resultEmpresa" class="result"></div>
+
+  <hr style="margin: 3rem auto; width: 60%;" />
+
+  <h2>🌟 Match para Influencer</h2>
+  <form id="formInfluencer" method="post" class="styled-form">
+    {% csrf_token %}
+    <input type="hidden" name="tipo" value="influencer" />
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required />
+
+    <label for="categorias">Categorías de tu contenido (separadas por coma):</label>
+    <input type="text" id="categorias" name="categorias" placeholder="Ej: Moda, Viajes, Tech" required />
+
+    <label for="ciudad">Ciudad:</label>
+    <input type="text" id="ciudad" name="ciudad" required />
+
+    <label for="salario_esperado">Salario esperado:</label>
+    <input type="number" id="salario_esperado" name="salario_esperado" min="0" step="any" required />
+
+    <button type="submit">🔍 Buscar Vacantes</button>
+  </form>
+
+  <div id="resultInfluencer" class="result"></div>
+
+  <script>
+    function getCookie(name) {
+      let cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+          const cookie = cookies[i].trim();
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+        }
+      }
+      return cookieValue;
+    }
+
+    function getMatchClass(score) {
+      if (score >= 80) return 'match-high';
+      if (score >= 50) return 'match-medium';
+      return 'match-low';
+    }
+
+    function toggleMensaje(btn) {
+      const container = btn.parentElement;
+      const corto = container.querySelector('.mensaje-corto');
+      const completo = container.querySelector('.mensaje-completo');
+
+      const isVisible = completo.style.display === 'inline';
+
+      if (isVisible) {
+        corto.style.display = 'inline';
+        completo.style.display = 'none';
+        btn.textContent = 'Ver más';
+      } else {
+        corto.style.display = 'none';
+        completo.style.display = 'inline';
+        btn.textContent = 'Ver menos';
+      }
+    }
+
+    async function handleFormSubmit(formId, resultDivId, tipo) {
+      const form = document.getElementById(formId);
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((value, key) => {
+          data[key] = value;
+        });
+
+        const response = await fetch('/match/', {
+          method: 'POST',
+          headers: {
+            'X-CSRFToken': getCookie('csrftoken'),
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        const resultDiv = document.getElementById(resultDivId);
+        resultDiv.innerHTML = '';
+
+        if (!result.resultados || result.resultados.length === 0) {
+          resultDiv.innerHTML = '<p>No se encontraron resultados.</p>';
+        } else {
+          result.resultados.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            const matchClass = getMatchClass(item.match || item.score || 0);
+
+            card.innerHTML = `
+              <h4>${tipo === 'empresa' ? item.nombre_influencer : item.nombre_vacante}</h4>
+              <p><strong>Ciudad:</strong> ${item.ciudad_influencer || item.ciudad_vacante || 'N/A'}</p>
+              <p><strong>Precio por campaña:</strong> $${item.precio_campaña?.toLocaleString() || 'N/A'}</p>
+              <p><strong>Categoría/Área:</strong> ${item.area_influencer || item.area_vacante || 'N/A'}</p>
+              <p><strong>Match:</strong> <span class="${matchClass}">${item.match || item.score || 0}%</span></p>
+              <div class="mensaje-expandible">
+                <span class="mensaje-corto">${item.mensaje.slice(0, 250)}...</span>
+                <span class="mensaje-completo">${item.mensaje}</span>
+                <button class="toggle-btn" onclick="toggleMensaje(this)">Ver más</button>
+              </div>
+            `;
+            resultDiv.appendChild(card);
+          });
+        }
+      });
+    }
+
+    handleFormSubmit('formEmpresa', 'resultEmpresa', 'empresa');
+    handleFormSubmit('formInfluencer', 'resultInfluencer', 'influencer');
+  </script>
+
+  <footer>
+    <p>&copy; 2025 RecruitMatchAI</p>
+  </footer>
+</body>
+</html>

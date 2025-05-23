@@ -28,12 +28,9 @@ urlpatterns = [
     path('signupaccount/', accountViews.signupaccount),
     path('accounts/', include('accounts.urls')),
     path('loginaccount/', accountViews.loginaccount),
-    path('accounts/', include('accounts.urls')),
     path('perfil/', accountViews.profile_view, name='profile'),
     path('ai/', include('ai.urls')),
     path('influencer/', include('influencer.urls')),
-    path('vacante/', include('vacante.urls')), 
-
+    path('vacante/', include('vacante.urls')),
+    path('match/', include('match.urls', namespace='match')),  # Aquí incluyes las URLs de match con namespace
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

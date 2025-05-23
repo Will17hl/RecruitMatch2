@@ -158,6 +158,8 @@
           <li><a href="/influencer">Influencer</a></li>
           <li><a href="/vacante">Vacante</a></li>
           <li><a href="perfil/">Perfil</a></li>
+          <!-- Botón Match siempre visible -->
+          <li><a href="{% url 'match:api_match' %}" class="cta-button">Match</a></li>
           {% if user.is_authenticated %}
             <li><a href="{% url 'logoutaccount' %}" class="cta-button">Logout ({{ user.username }})</a></li>
           {% else %}

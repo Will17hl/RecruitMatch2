@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .views import api_match
 
 urlpatterns = [
-    path('generar-campaña/', views.generarar_campaña, name='generar_campaña'),
+    path('match/', api_match, name='api_match'),
 ]

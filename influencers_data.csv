@@ -1,51 +1,51 @@
 id_influencer,nombre_influencer,redes_sociales,seguidores,colaboraciones,ciudad_influencer,area_influencer,precio_campaña,imagen
-1,Influencer 1,Instagram,55072,Campaña A,Bogotá,Cultura,500,images/default_influencer.png
-2,Influencer 2,"X, Facebook",5291,Campaña D,Medellín,Deportes,2379,images/default_influencer.png
-3,Influencer 3,"Instagram, Facebook, TikTok",45050,"Campaña E, Campaña A, Campaña B, Campaña D, Campaña C",Medellín,Tecnología,8940,images/default_influencer.png
-4,Influencer 4,Facebook,92122,"Campaña A, Campaña E, Campaña C",Bogotá,Moda,9924,images/default_influencer.png
-5,Influencer 5,"Instagram, Facebook",51361,"Campaña E, Campaña C",Bogotá,Marketing,2096,images/default_influencer.png
-6,Influencer 6,"Facebook, Instagram",4633,"Campaña E, Campaña B, Campaña D, Campaña C, Campaña A",Bogotá,Cultura,5412,images/default_influencer.png
-7,Influencer 7,"X, Instagram",43355,Campaña B,Medellín,Cultura,5351,images/default_influencer.png
-8,Influencer 8,"TikTok, X",36218,"Campaña C, Campaña B, Campaña A",Bogotá,Moda,1424,images/default_influencer.png
-9,Influencer 9,"Instagram, Facebook, TikTok",81174,Campaña C,Medellín,Tecnología,1550,images/default_influencer.png
-10,Influencer 10,"TikTok, X",76737,"Campaña D, Campaña C, Campaña B, Campaña E",Bogotá,Tecnología,7379,images/default_influencer.png
-11,Influencer 11,X,98481,"Campaña E, Campaña A, Campaña C",Medellín,Marketing,4156,images/default_influencer.png
-12,Influencer 12,"TikTok, Facebook, X",29200,"Campaña D, Campaña A, Campaña C, Campaña B",Medellín,Tecnología,7963,images/default_influencer.png
-13,Influencer 13,"X, TikTok",86073,Campaña B,Bogotá,Tecnología,5050,images/default_influencer.png
-14,Influencer 14,"Instagram, X, Facebook, TikTok",39078,"Campaña D, Campaña B, Campaña C, Campaña A, Campaña E",Medellín,Marketing,8355,images/default_influencer.png
-15,Influencer 15,"TikTok, X, Instagram, Facebook",83047,"Campaña B, Campaña A, Campaña E, Campaña D, Campaña C",Bogotá,Tecnología,7752,images/default_influencer.png
-16,Influencer 16,"Instagram, TikTok, Facebook",72366,"Campaña B, Campaña C",Bogotá,Deportes,8834,images/default_influencer.png
-17,Influencer 17,"X, Instagram, Facebook",99388,"Campaña B, Campaña C, Campaña E, Campaña A",Medellín,Deportes,8239,images/default_influencer.png
-18,Influencer 18,"X, Instagram",51236,"Campaña E, Campaña D, Campaña A",Bogotá,Marketing,5425,images/default_influencer.png
-19,Influencer 19,TikTok,17791,"Campaña B, Campaña D, Campaña A",Bogotá,Deportes,6514,images/default_influencer.png
-20,Influencer 20,"Instagram, TikTok, Facebook",75290,"Campaña E, Campaña A, Campaña C, Campaña D",Medellín,Moda,7283,images/default_influencer.png
-21,Influencer 21,TikTok,41709,"Campaña A, Campaña E, Campaña B, Campaña D, Campaña C",Bogotá,Deportes,1829,images/default_influencer.png
-22,Influencer 22,Instagram,62642,"Campaña A, Campaña E, Campaña C",Bogotá,Moda,987,images/default_influencer.png
-23,Influencer 23,"TikTok, X",32722,"Campaña D, Campaña A, Campaña C, Campaña B, Campaña E",Medellín,Marketing,8570,images/default_influencer.png
-24,Influencer 24,Facebook,25935,"Campaña B, Campaña E, Campaña D, Campaña A",Bogotá,Marketing,2646,images/default_influencer.png
-25,Influencer 25,"X, TikTok, Facebook, Instagram",99729,"Campaña E, Campaña D",Medellín,Tecnología,5924,images/default_influencer.png
-26,Influencer 26,"TikTok, Facebook, Instagram",98676,"Campaña C, Campaña D, Campaña B",Medellín,Moda,6085,images/default_influencer.png
-27,Influencer 27,"Facebook, Instagram, TikTok, X",24167,"Campaña A, Campaña B, Campaña E",Bogotá,Deportes,4925,images/default_influencer.png
-28,Influencer 28,"Facebook, TikTok, Instagram, X",14199,"Campaña E, Campaña B",Medellín,Moda,6887,images/default_influencer.png
-29,Influencer 29,Instagram,43579,"Campaña C, Campaña D, Campaña E, Campaña A",Medellín,Tecnología,8963,images/default_influencer.png
-30,Influencer 30,"Facebook, Instagram, TikTok",25221,"Campaña B, Campaña E, Campaña A",Medellín,Tecnología,7339,images/default_influencer.png
-31,Influencer 31,"Instagram, Facebook, TikTok, X",95960,Campaña A,Medellín,Cultura,8511,images/default_influencer.png
-32,Influencer 32,"X, TikTok, Facebook",40145,"Campaña D, Campaña A",Bogotá,Cultura,4806,images/default_influencer.png
-33,Influencer 33,"Instagram, Facebook, TikTok",33200,Campaña C,Bogotá,Moda,7321,images/default_influencer.png
-34,Influencer 34,"X, Instagram, Facebook",84909,"Campaña E, Campaña C, Campaña A, Campaña B, Campaña D",Medellín,Moda,9158,images/default_influencer.png
-35,Influencer 35,"TikTok, Facebook, X",97435,"Campaña D, Campaña E",Medellín,Moda,5880,images/default_influencer.png
-36,Influencer 36,"Instagram, TikTok, Facebook, X",14461,Campaña E,Bogotá,Marketing,3231,images/default_influencer.png
-37,Influencer 37,"Facebook, Instagram, TikTok, X",71987,Campaña C,Bogotá,Tecnología,3261,images/default_influencer.png
-38,Influencer 38,"X, Facebook, TikTok",51501,Campaña B,Bogotá,Tecnología,7368,images/default_influencer.png
-39,Influencer 39,Instagram,17411,"Campaña D, Campaña B, Campaña E, Campaña C",Bogotá,Cultura,6040,images/default_influencer.png
-40,Influencer 40,"TikTok, Instagram, Facebook",47129,"Campaña A, Campaña D, Campaña B, Campaña C",Medellín,Cultura,1652,images/default_influencer.png
-41,Influencer 41,"Instagram, Facebook, TikTok",74270,Campaña A,Bogotá,Marketing,8438,images/default_influencer.png
-42,Influencer 42,"Instagram, X",50220,"Campaña C, Campaña E, Campaña D, Campaña B, Campaña A",Medellín,Cultura,5084,images/default_influencer.png
-43,Influencer 43,"Facebook, Instagram, TikTok",26551,"Campaña D, Campaña A",Bogotá,Moda,5375,images/default_influencer.png
-44,Influencer 44,"TikTok, X",90258,Campaña A,Bogotá,Moda,7727,images/default_influencer.png
-45,Influencer 45,X,86476,Campaña C,Bogotá,Cultura,6871,images/default_influencer.png
-46,Influencer 46,Instagram,49717,"Campaña B, Campaña D, Campaña C",Bogotá,Moda,6224,images/default_influencer.png
-47,Influencer 47,"Instagram, TikTok",44007,"Campaña A, Campaña E, Campaña C, Campaña D",Bogotá,Cultura,3156,images/default_influencer.png
-48,Influencer 48,"Instagram, Facebook",15363,"Campaña B, Campaña D, Campaña C, Campaña A, Campaña E",Bogotá,Marketing,2949,images/default_influencer.png
-49,Influencer 49,Instagram,87821,"Campaña D, Campaña E",Bogotá,Deportes,587,images/default_influencer.png
-50,Influencer 50,X,91702,"Campaña A, Campaña E, Campaña B, Campaña C",Medellín,Tecnología,1216,images/default_influencer.png
+1,Camila Torres,Instagram,55072,Campaña A,Bogotá,Cultura,500,images/default_influencer.png
+2,Santiago Ruiz,"X, Facebook",5291,Campaña D,Medellín,Deportes,2379,images/default_influencer.png
+3,Alejandra Gómez,"Instagram, Facebook, TikTok",45050,"Campaña E, Campaña A, Campaña B, Campaña D, Campaña C",Medellín,Tecnología,8940,images/default_influencer.png
+4,Juan Pérez,Facebook,92122,"Campaña A, Campaña E, Campaña C",Bogotá,Moda,9924,images/default_influencer.png
+5,Valentina Martínez,"Instagram, Facebook",51361,"Campaña E, Campaña C",Bogotá,Marketing,2096,images/default_influencer.png
+6,Luis Herrera,"Facebook, Instagram",4633,"Campaña E, Campaña B, Campaña D, Campaña C, Campaña A",Bogotá,Cultura,5412,images/default_influencer.png
+7,Laura Fernández,"X, Instagram",43355,Campaña B,Medellín,Cultura,5351,images/default_influencer.png
+8,Andrés Moreno,"TikTok, X",36218,"Campaña C, Campaña B, Campaña A",Bogotá,Moda,1424,images/default_influencer.png
+9,Maria López,"Instagram, Facebook, TikTok",81174,Campaña C,Medellín,Tecnología,1550,images/default_influencer.png
+10,Carlos Ramírez,"TikTok, X",76737,"Campaña D, Campaña C, Campaña B, Campaña E",Bogotá,Tecnología,7379,images/default_influencer.png
+11,Sofía Vargas,X,98481,"Campaña E, Campaña A, Campaña C",Medellín,Marketing,4156,images/default_influencer.png
+12,Diego Sánchez,"TikTok, Facebook, X",29200,"Campaña D, Campaña A, Campaña C, Campaña B",Medellín,Tecnología,7963,images/default_influencer.png
+13,Isabela Castillo,"X, TikTok",86073,Campaña B,Bogotá,Tecnología,5050,images/default_influencer.png
+14,Felipe Díaz,"Instagram, X, Facebook, TikTok",39078,"Campaña D, Campaña B, Campaña C, Campaña A, Campaña E",Medellín,Marketing,8355,images/default_influencer.png
+15,Ana María Jiménez,"TikTok, X, Instagram, Facebook",83047,"Campaña B, Campaña A, Campaña E, Campaña D, Campaña C",Bogotá,Tecnología,7752,images/default_influencer.png
+16,Juan David Molina,"Instagram, TikTok, Facebook",72366,"Campaña B, Campaña C",Bogotá,Deportes,8834,images/default_influencer.png
+17,Sandra Mejía,"X, Instagram, Facebook",99388,"Campaña B, Campaña C, Campaña E, Campaña A",Medellín,Deportes,8239,images/default_influencer.png
+18,Natalia Ríos,"X, Instagram",51236,"Campaña E, Campaña D, Campaña A",Bogotá,Marketing,5425,images/default_influencer.png
+19,Andrés Torres,TikTok,17791,"Campaña B, Campaña D, Campaña A",Bogotá,Deportes,6514,images/default_influencer.png
+20,Camilo Ortiz,"Instagram, TikTok, Facebook",75290,"Campaña E, Campaña A, Campaña C, Campaña D",Medellín,Moda,7283,images/default_influencer.png
+21,Lina Vargas,TikTok,41709,"Campaña A, Campaña E, Campaña B, Campaña D, Campaña C",Bogotá,Deportes,1829,images/default_influencer.png
+22,Mario Fernández,Instagram,62642,"Campaña A, Campaña E, Campaña C",Bogotá,Moda,987,images/default_influencer.png
+23,Catalina Gómez,"TikTok, X",32722,"Campaña D, Campaña A, Campaña C, Campaña B, Campaña E",Medellín,Marketing,8570,images/default_influencer.png
+24,Jorge Ramírez,Facebook,25935,"Campaña B, Campaña E, Campaña D, Campaña A",Bogotá,Marketing,2646,images/default_influencer.png
+25,Sofía Martínez,"X, TikTok, Facebook, Instagram",99729,"Campaña E, Campaña D",Medellín,Tecnología,5924,images/default_influencer.png
+26,Daniel Castro,"TikTok, Facebook, Instagram",98676,"Campaña C, Campaña D, Campaña B",Medellín,Moda,6085,images/default_influencer.png
+27,Laura Mejía,"Facebook, Instagram, TikTok, X",24167,"Campaña A, Campaña B, Campaña E",Bogotá,Deportes,4925,images/default_influencer.png
+28,Camilo Sánchez,"Facebook, TikTok, Instagram, X",14199,"Campaña E, Campaña B",Medellín,Moda,6887,images/default_influencer.png
+29,Alejandra Ruiz,Instagram,43579,"Campaña C, Campaña D, Campaña E, Campaña A",Medellín,Tecnología,8963,images/default_influencer.png
+30,Javier Morales,"Facebook, Instagram, TikTok",25221,"Campaña B, Campaña E, Campaña A",Medellín,Tecnología,7339,images/default_influencer.png
+31,María Fernanda Castro,"Instagram, Facebook, TikTok, X",95960,Campaña A,Medellín,Cultura,8511,images/default_influencer.png
+32,David Ramírez,"X, TikTok, Facebook",40145,"Campaña D, Campaña A",Bogotá,Cultura,4806,images/default_influencer.png
+33,Luisa Martínez,"Instagram, Facebook, TikTok",33200,Campaña C,Bogotá,Moda,7321,images/default_influencer.png
+34,Fernando Gómez,"X, Instagram, Facebook",84909,"Campaña E, Campaña C, Campaña A, Campaña B, Campaña D",Medellín,Moda,9158,images/default_influencer.png
+35,Valeria Torres,"TikTok, Facebook, X",97435,"Campaña D, Campaña E",Medellín,Moda,5880,images/default_influencer.png
+36,Manuel Sánchez,"Instagram, TikTok, Facebook, X",14461,Campaña E,Bogotá,Marketing,3231,images/default_influencer.png
+37,Sara Rodríguez,"Facebook, Instagram, TikTok, X",71987,Campaña C,Bogotá,Tecnología,3261,images/default_influencer.png
+38,José Luis Martínez,"X, Facebook, TikTok",51501,Campaña B,Bogotá,Tecnología,7368,images/default_influencer.png
+39,Daniela López,"Instagram",17411,"Campaña D, Campaña B, Campaña E, Campaña C",Bogotá,Cultura,6040,images/default_influencer.png
+40,Camilo Ríos,"TikTok, Instagram, Facebook",47129,"Campaña A, Campaña D, Campaña B, Campaña C",Medellín,Cultura,1652,images/default_influencer.png
+41,Ana Sofía Díaz,"Instagram, Facebook, TikTok",74270,Campaña A,Bogotá,Marketing,8438,images/default_influencer.png
+42,Juan Carlos Mejía,"Instagram, X",50220,"Campaña C, Campaña E, Campaña D, Campaña B, Campaña A",Medellín,Cultura,5084,images/default_influencer.png
+43,Mariana Pérez,"Facebook, Instagram, TikTok",26551,"Campaña D, Campaña A",Bogotá,Moda,5375,images/default_influencer.png
+44,David Herrera,"TikTok, X",90258,Campaña A,Bogotá,Moda,7727,images/default_influencer.png
+45,Sofía Vargas,X,86476,Campaña C,Bogotá,Cultura,6871,images/default_influencer.png
+46,Camilo Martínez,"Instagram",49717,"Campaña B, Campaña D, Campaña C",Bogotá,Moda,6224,images/default_influencer.png
+47,Isabela Gómez,"Instagram, TikTok",44007,"Campaña A, Campaña E, Campaña C, Campaña D",Bogotá,Cultura,3156,images/default_influencer.png
+48,Andrés Torres,"Instagram, Facebook",15363,"Campaña B, Campaña D, Campaña C, Campaña A, Campaña E",Bogotá,Marketing,2949,images/default_influencer.png
+49,María José Ramírez,"Instagram",87821,"Campaña D, Campaña E",Bogotá,Deportes,587,images/default_influencer.png
+50,Diego Fernández,X,91702,"Campaña A, Campaña E, Campaña B, Campaña C",Medellín,Tecnología,1216,images/default_influencer.png
